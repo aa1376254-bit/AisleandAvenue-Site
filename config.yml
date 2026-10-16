@@ -1,0 +1,37 @@
+# IMPORTANT: replace YOUR_DECAP_TURBO_SITE_ID before deploying. Connect this Netlify site to your GitHub repo first.
+backend:
+  name: turbo-github
+  branch: main
+  turbo_site_id: YOUR_DECAP_TURBO_SITE_ID
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+site_url: "https://YOUR-NETLIFY-SITE.netlify.app"
+display_url: "https://YOUR-NETLIFY-SITE.netlify.app"
+show_preview_links: true
+publish_mode: simple
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{category}} — {{date}}"
+    sortable_fields: ["date", "title", "category"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug / URL", name: "slug", widget: "string", hint: "Use lowercase words separated by hyphens. This becomes slug.html" }
+      - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Status", name: "status", widget: "select", options: ["draft", "published"], default: "published" }
+      - { label: "Category", name: "category", widget: "string", default: "Bridal Beauty" }
+      - { label: "Short description", name: "description", widget: "text" }
+      - { label: "Featured image", name: "image", widget: "image", required: false }
+      - { label: "Image alt text", name: "image_alt", widget: "string", required: false }
+      - { label: "SEO title", name: "seo_title", widget: "string", required: false }
+      - { label: "SEO description", name: "seo_description", widget: "text", required: false }
+      - { label: "Article body", name: "body", widget: "markdown" }

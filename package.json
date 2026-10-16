@@ -1,0 +1,12 @@
+{
+  "name": "aisle-and-avenue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "marked": "^15.0.7",
+    "js-yaml": "^4.1.0"
+  }
+}
