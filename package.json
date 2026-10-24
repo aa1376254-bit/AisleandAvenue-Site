@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js"
+       "build": "node build.js"
   },
   "dependencies": {
     "marked": "^15.0.7",
