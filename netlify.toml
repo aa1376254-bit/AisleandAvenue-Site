@@ -1,5 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "."
-
-# Keep CMS config readable by the browser, but do not place secrets here.
